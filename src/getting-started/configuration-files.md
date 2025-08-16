@@ -16,12 +16,13 @@ partition_key = "id"
 schema = "customer"
 ```
 
-Here, we can see that we initially define a "customer" schema, then create a stream with that schema attached to it.
+Here, we can see that we define a "customer" schema, then create a stream with that schema attached to it.
 
 To upload your configuration, simply invoke the `upload_configuration` with the byte representation of the above config:
 
 ```rust
 let config = std::fs::read_to_string("{file_name}").unwrap();
+
 client.upload_configuration(config.as_bytes()).unwrap();
 ```
 
